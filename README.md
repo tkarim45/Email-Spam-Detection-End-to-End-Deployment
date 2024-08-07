@@ -48,9 +48,6 @@ To deploy the app using Docker, follow these steps:
     docker run -p 8080:8080 email-spam-detection
     ```
 
-<> # Path: README.md
-<summary>Expand</summary>
-
 ## Usage
 
 The app provides a simple interface for users to input an email and receive a prediction on whether it is spam or not. The model is highly accurate and can be used to filter out unwanted emails effectively.
@@ -76,9 +73,3 @@ Contributions are what make the open-source community such an amazing place to l
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-## Contact
-
-Your Name -
-
-Project Link: [
