@@ -2,16 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spam Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+        .box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            width: 60%;
+            max-width: 800px;
+            overflow: hidden;
+        }
+        .box div {
+            padding: 2rem;
+            width: 50%;
+        }
+        .box div:first-child {
+            border-right: 1px solid #ddd;
+        }
+        .pred {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            border: 1px solid #ffffff;
+            border-radius: 4px;
+            padding: 10px;
+            resize: none;
+        }
+        button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <form action="/predict" method="post">
-        <label for="email">Enter email content:</label>
-        <textarea name="email" id="email" rows="10" cols="30"></textarea>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="navbar">
+        Spam Detection
     </div>
-    <h1>{{ prediction_text }}</h1>
+    <div class="container">
+        <div class="box">
+            <div>
+                <form action="/predict" method="post">
+                    <textarea name="email" id="email" rows="10" cols="30" placeholder="Enter email content:"></textarea>
+                    <br><br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="pred">
+                <i>{{ prediction_text}}</i>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -38,7 +38,8 @@ def predict():
     my_prediction = logmodel.predict(vect)
     print(my_prediction)
     return render_template(
-        "index.html", prediction_text="The message is {}".format(my_prediction[0])
+        "index.html",
+        prediction_text="The Following Email is {}".format(my_prediction[0]),
     )
 
 
